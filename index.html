@@ -6,7 +6,9 @@
 <title>Bosnia Group Trip — Friday to Monday</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -34,7 +36,7 @@
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     background: linear-gradient(-45deg, #f0ecfa, #f7f6fc, #edf1fb, #faf5ec);
     background-size: 400% 400%;
     animation: bgShift 20s ease infinite;
@@ -45,152 +47,162 @@
 
   /* ── HERO ── */
   .hero {
-    background: linear-gradient(165deg, #040c1e 0%, #08102a 25%, #0f1528 50%, #12102e 75%, #1a1035 100%);
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 60px 24px 80px;
+    padding: 48px 20px 64px;
     position: relative;
-    overflow: hidden;
   }
 
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(1.5px 1.5px at  8% 14%, rgba(255,255,255,0.60) 0%, transparent 100%),
-      radial-gradient(1px   1px   at 22%  8%, rgba(255,255,255,0.42) 0%, transparent 100%),
-      radial-gradient(1.5px 1.5px at 45% 20%, rgba(255,255,255,0.55) 0%, transparent 100%),
-      radial-gradient(1px   1px   at 68% 12%, rgba(255,255,255,0.38) 0%, transparent 100%),
-      radial-gradient(2px   2px   at 84% 18%, rgba(255,255,255,0.28) 0%, transparent 100%),
-      radial-gradient(1px   1px   at 12% 38%, rgba(255,255,255,0.32) 0%, transparent 100%),
-      radial-gradient(1.5px 1.5px at 35% 44%, rgba(255,255,255,0.48) 0%, transparent 100%),
-      radial-gradient(1px   1px   at 72% 34%, rgba(255,255,255,0.38) 0%, transparent 100%),
-      radial-gradient(2px   2px   at 55%  6%, rgba(255,255,255,0.28) 0%, transparent 100%),
-      radial-gradient(1px   1px   at 90% 42%, rgba(255,255,255,0.42) 0%, transparent 100%),
-      radial-gradient(1.5px 1.5px at 78% 55%, rgba(255,255,255,0.30) 0%, transparent 100%),
-      radial-gradient(2px   2px   at 25% 28%, rgba(255,255,255,0.45) 0%, transparent 100%),
-      radial-gradient(ellipse 110% 55% at 50% -5%, #3d1f7055 0%, transparent 55%),
-      radial-gradient(ellipse 80%  60% at 50%  0%, #2a1a5e55 0%, transparent 70%),
-      radial-gradient(ellipse 60%  40% at 15% 80%, #c9922a2a 0%, transparent 60%),
-      radial-gradient(ellipse 50%  50% at 85% 70%, #1455a42a 0%, transparent 60%),
-      radial-gradient(ellipse 70%  35% at 50% 110%, #c9922a1a 0%, transparent 50%);
-    pointer-events: none;
+  .hero-card {
+    width: 100%;
+    max-width: 640px;
+    background: linear-gradient(180deg, #161d33 0%, #121a2e 100%);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 28px;
+    padding: 32px 28px;
+    box-shadow: 0 30px 70px rgba(8,12,28,0.45);
+    position: relative;
+    z-index: 1;
   }
 
+  .hero-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 8px;
+  }
   .hero-flag {
-    font-size: 72px;
-    margin-bottom: 20px;
-    display: block;
-    filter: drop-shadow(0 4px 24px #c9922a55);
-    animation: float 4s ease-in-out infinite;
+    font-size: 48px;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 4px;
+    filter: drop-shadow(0 4px 16px rgba(201,146,42,0.35));
   }
-  @keyframes float {
-    0%,100% { transform: translateY(0); }
-    50%      { transform: translateY(-10px); }
-  }
-
-  .hero-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-  }
-
   .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(40px, 8vw, 88px);
-    font-weight: 900;
+    font-family: 'Open Sans', sans-serif;
+    font-size: clamp(34px, 7vw, 48px);
+    font-weight: 800;
     color: var(--white);
-    line-height: 1.05;
-    margin-bottom: 12px;
-    letter-spacing: -0.02em;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
   }
-
-  .hero-title span {
-    color: var(--gold);
-  }
+  .hero-title span { color: var(--gold); }
 
   .hero-sub {
-    font-size: 16px;
-    color: #aaaac8;
-    font-weight: 300;
-    margin-bottom: 40px;
-    letter-spacing: 0.04em;
+    font-size: 17px;
+    color: #8a8fb0;
+    font-weight: 500;
+    margin: 14px 0 26px;
+    letter-spacing: 0.01em;
   }
+  .hero-sub strong { color: var(--white); font-weight: 700; }
+  .hero-sub .arrow { color: var(--gold); font-weight: 700; padding: 0 2px; }
 
-  /* Route pills */
+  /* Itinerary stop list */
   .route {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 48px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
   }
 
   .route-pill {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 40px;
-    padding: 8px 18px;
     display: flex;
     align-items: center;
-    gap: 8px;
-    color: var(--white);
-    font-size: 13px;
-    font-weight: 500;
-    backdrop-filter: blur(8px);
-    transition: background 0.2s, border-color 0.2s;
+    gap: 16px;
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 18px;
+    padding: 18px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
   }
   .route-pill:hover {
-    background: rgba(201,146,42,0.18);
-    border-color: var(--gold);
-  }
-  .route-pill .arrow {
-    color: var(--gold);
-    opacity: 0.7;
-    font-size: 11px;
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.14);
+    transform: translateY(-1px);
   }
 
-  .hero-scroll {
-    position: absolute;
-    bottom: 28px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: rgba(255,255,255,0.35);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+  .route-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.06);
+    color: #9aa0c4;
   }
-  .scroll-dot {
-    width: 6px; height: 20px;
-    border: 1.5px solid rgba(255,255,255,0.25);
-    border-radius: 3px;
-    position: relative;
-    overflow: hidden;
+  .route-icon .material-symbols-outlined { font-size: 24px; }
+
+  .route-body {
+    flex: 1;
+    min-width: 0;
   }
-  .scroll-dot::after {
-    content: '';
-    position: absolute;
-    width: 3px; height: 6px;
-    background: var(--gold);
-    border-radius: 2px;
-    left: 50%; transform: translateX(-50%);
-    animation: scrolldown 1.8s ease-in-out infinite;
+  .route-name {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
   }
-  @keyframes scrolldown {
-    0%   { top: 2px; opacity: 1; }
-    80%  { top: 11px; opacity: 0; }
-    100% { top: 2px; opacity: 0; }
+  .route-meta {
+    font-size: 14px;
+    color: #8a8fb0;
+    margin-top: 3px;
+  }
+
+  .route-badge {
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 40px;
+    background: rgba(255,255,255,0.07);
+    color: #a9aecc;
+  }
+
+  /* Down-arrow separator between stops */
+  .route-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5a6088;
+    padding: 12px 0;
+  }
+  .route-arrow .material-symbols-outlined { font-size: 22px; }
+
+  /* hub (Sarajevo) — amber accent */
+  .route-pill.is-hub {
+    background: linear-gradient(180deg, rgba(201,146,42,0.10), rgba(201,146,42,0.04));
+    border-color: rgba(201,146,42,0.35);
+  }
+  .route-pill.is-hub:hover { border-color: rgba(201,146,42,0.55); }
+  .route-pill.is-hub .route-icon {
+    background: rgba(201,146,42,0.16);
+    color: var(--gold);
+  }
+  .route-pill.is-hub .route-badge {
+    background: rgba(201,146,42,0.18);
+    color: var(--gold);
+  }
+
+  /* highlight (Mostar) — green accent */
+  .route-pill.is-highlight {
+    background: linear-gradient(180deg, rgba(26,110,64,0.12), rgba(26,110,64,0.04));
+    border-color: rgba(38,160,95,0.30);
+  }
+  .route-pill.is-highlight:hover { border-color: rgba(38,160,95,0.5); }
+  .route-pill.is-highlight .route-icon {
+    background: rgba(38,160,95,0.16);
+    color: #34c47e;
+  }
+  .route-pill.is-highlight .route-badge {
+    background: rgba(38,160,95,0.16);
+    color: #34c47e;
   }
 
   /* ── NAV TABS ── */
@@ -201,9 +213,16 @@
     background: rgba(247,246,252,0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--divider);
+  }
+
+  .day-nav-inner {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 0;
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
     padding: 0 16px;
   }
 
@@ -223,11 +242,73 @@
     align-items: center;
     gap: 6px;
   }
+  .day-tab .day-short {
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: currentColor;
+  }
   .day-tab:hover { color: var(--ink); }
   .day-tab.friday:hover,  .day-tab.friday.active  { color: var(--purple); border-bottom-color: var(--purple); }
   .day-tab.saturday:hover,.day-tab.saturday.active { color: var(--amber);  border-bottom-color: var(--amber); }
   .day-tab.sunday:hover,  .day-tab.sunday.active   { color: var(--blue);   border-bottom-color: var(--blue); }
   .day-tab.monday:hover,  .day-tab.monday.active   { color: var(--green);  border-bottom-color: var(--green); }
+
+  /* ── FILTER TOGGLE ── */
+  .filter-toggle {
+    margin-left: auto;
+    margin-right: 16px;
+    background: rgba(201,146,42,0.12);
+    border: 1px solid rgba(201,146,42,0.3);
+    border-radius: 10px;
+    max-width:200px !important;
+    padding: 8px 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .filter-toggle:hover {
+    background: rgba(201,146,42,0.22);
+    border-color: var(--gold);
+  }
+  .filter-toggle.active {
+    background: rgba(201,146,42,0.25);
+    border-color: var(--gold);
+  }
+
+  /* ── PRIORITY FILTERING ── */
+  .event-card.priority-3,
+  .event-card.priority-4 {
+    transition: opacity 0.3s, max-height 0.3s;
+  }
+  body.filter-must-see .event-card.priority-3,
+  body.filter-must-see .event-card.priority-4 {
+    display: none;
+  }
+
+  /* ── WALK TIME CARD ── */
+  .walk-time-card {
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--divider);
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .walk-time-card::before {
+    content: '↓';
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
 
   /* ── MAIN CONTENT ── */
   .container {
@@ -242,47 +323,99 @@
   }
 
   .day-header {
-    border-radius: 16px;
-    padding: 28px 28px 22px;
-    margin-bottom: 32px;
+    border-radius: 14px;
+    padding: 20px 20px;
+    margin-bottom: 20px;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid rgba(224,221,245,0.95);
+    color: var(--ink);
   }
-  .day-header::after {
-    content: attr(data-emoji);
+  .day-header.no-accordion {
+    cursor: default;
+  }
+  .day-header.no-accordion::before { display: none; }
+  .day-header::before {
+    content: 'arrow_forward_ios';
+    font-family: 'Material Icons';
+    font-weight: normal;
+    speak: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
     position: absolute;
-    right: 24px; top: 50%;
-    transform: translateY(-50%);
-    font-size: 64px;
-    opacity: 0.15;
-    pointer-events: none;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    font-size: 18px;
+    color: var(--ink-soft);
+    transition: transform 0.2s ease;
   }
-  .day-header.friday   { background: linear-gradient(135deg, #5c3f9e, #7b5ac4); }
-  .day-header.saturday { background: linear-gradient(135deg, #b87820, #d4972a); }
-  .day-header.sunday   { background: linear-gradient(135deg, #1455a4, #2070cc); }
-  .day-header.monday   { background: linear-gradient(135deg, #1a6e40, #2a9e5c); }
+  .day-section.collapsed .day-header::before {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+  .day-section.collapsed .events {
+    display: none;
+  }
+  .day-header.friday {
+    border-color: rgba(92,63,158,0.22);
+    background: #efe8ff; /* pastel lavender */
+  }
+  .day-header.saturday {
+    border-color: rgba(184,120,32,0.22);
+    background: #fff4e0; /* pastel warm amber */
+  }
+  .day-header.sunday {
+    border-color: rgba(20,85,164,0.22);
+    background: #e8f4ff; /* pastel sky blue */
+  }
+  .day-header.monday {
+    border-color: rgba(26,110,64,0.22);
+    background: #eaf9ef; /* pastel mint green */
+  }
 
   .day-header .day-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.65);
+    color: var(--ink-soft);
     margin-bottom: 6px;
   }
   .day-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(22px, 4vw, 30px);
+    font-family: 'Open Sans', sans-serif;
+    font-size: clamp(20px, 4vw, 26px);
     font-weight: 700;
-    color: var(--white);
+    color: var(--ink);
     line-height: 1.2;
     margin-bottom: 6px;
   }
   .day-header .day-desc {
     font-size: 13px;
-    color: rgba(255,255,255,0.72);
+    color: var(--ink-mid);
     font-weight: 400;
+    margin-bottom: 0;
   }
+
+  /* Special styling for the Flights & accommodations header (non-accordion) */
+  .stay-section .day-header {
+    padding: 22px 24px;
+    margin-bottom: 24px;
+    background: linear-gradient(90deg, #fff7e6, #fffaf3);
+    border-color: rgba(201,146,42,0.14);
+    box-shadow: 0 8px 20px rgba(201,146,42,0.06);
+    border-radius: 10px;
+  }
+  .stay-section .day-header h2 {
+    color: var(--gold);
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+  .stay-section .day-header .day-desc { color: var(--ink-mid); }
 
   /* ── EVENT CARDS ── */
   .events { display: flex; flex-direction: column; gap: 0; }
@@ -299,7 +432,7 @@
   .event-card:last-child { border-bottom: none; }
 
   .event-time {
-    font-family: 'DM Mono', monospace;
+    font-family: 'Open Sans', sans-serif;
     font-size: 10px;
     color: var(--ink-soft);
     padding-top: 3px;
@@ -402,7 +535,7 @@
   }
 
   .summary-section h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 26px;
     font-weight: 700;
     color: var(--ink);
@@ -428,7 +561,7 @@
   .summary-card.sun { background: var(--blue-bg);   border-color: #aac4f0; }
 
   .summary-card .s-label {
-    font-family: 'DM Mono', monospace;
+    font-family: 'Open Sans', sans-serif;
     font-size: 10px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -477,6 +610,52 @@
     margin-top: 1px;
   }
 
+  .stay-section {
+    padding: 32px 0 24px;
+  }
+  .stay-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .stay-card {
+    border-radius: 16px;
+    padding: 20px 18px;
+    border: 1px solid var(--divider);
+    background: rgba(255,255,255,0.92);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .stay-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+  }
+  .stay-card .s-label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .stay-card .s-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--ink-mid);
+    font-size: 13px;
+  }
+  .stay-card .s-items a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .stay-card .s-items a:hover {
+    text-decoration: underline;
+  }
+
   /* ── FOOTER ── */
   footer {
     text-align: center;
@@ -494,11 +673,89 @@
     .summary-grid { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; }
     .day-tab span.label { display: none; }
+    .filter-toggle { margin-right: 0; padding: 8px 12px; font-size: 11px; }
     .event-card {
       grid-template-columns: 64px 1fr;
     }
     .hero-title { letter-spacing: -0.01em; }
+    .stay-grid { grid-template-columns: 1fr; }
+    .filter-toggle { padding: 10px 14px; }
   }
+
+  /* Mobile-first tweaks */
+  @media (max-width: 600px) {
+    .day-nav-inner {
+      overflow-x: visible;
+      -webkit-overflow-scrolling: touch;
+      padding: 8px 12px;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .day-tab {
+      flex: 0 1 auto;
+      min-width: 44px;
+      padding: 10px 10px;
+      font-size: 14px;
+      justify-content: center;
+      touch-action: manipulation;
+      order: 1;
+    }
+    .filter-toggle {
+      padding: 12px 12px;
+      font-size: 13px;
+      width: 100%;
+      max-width: none;
+      justify-content: center;
+      order: 2;
+      margin: 10px auto 0;
+    }
+    .hero { padding: 32px 14px 48px; min-height: auto; }
+    .hero-card { padding: 24px 18px; border-radius: 22px; }
+    .hero-header { gap: 14px; }
+    .hero-flag { font-size: 40px; }
+    .route-pill { padding: 14px 14px; gap: 12px; border-radius: 16px; }
+    .route-icon { width: 42px; height: 42px; }
+    .route-name { font-size: 18px; }
+    .route-meta { font-size: 13px; }
+    .route-badge { font-size: 12px; padding: 5px 11px; }
+    .container { padding: 0 14px; }
+    .day-header { padding: 16px; }
+    .day-header h2 { font-size: 20px; }
+    .event-time { font-size: 12px; }
+    .scroll-top {
+      position: fixed;
+      right: 16px;
+      bottom: 18px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(26,110,64,0.95);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+      cursor: pointer;
+      z-index: 200;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .scroll-top:hover {
+      background: rgba(26,110,64,1);
+    }
+  }
+
+  /* prevent sticky nav from overlapping anchored sections */
+  section[id] { scroll-margin-top: 76px; }
 
   /* ── SCROLL REVEAL ── */
   .reveal {
@@ -513,8 +770,6 @@
 
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; }
-    .hero-flag { animation: none; }
-    .scroll-dot::after { animation: none; }
     body { animation: none; background: #f7f6fc; }
   }
 
@@ -525,14 +780,21 @@
     100% { background-position: 0% 50%; }
   }
 
-  /* ── HERO HORIZON GLOW + CITY LIGHTS ── */
+  /* ── HERO BACKGROUND GLOW ── */
+  .hero {
+    background: linear-gradient(165deg, #0a1022 0%, #0d1228 45%, #11102a 100%);
+    overflow: hidden;
+  }
   .hero::after {
     content: '';
     position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 200px;
-    background: linear-gradient(to top, rgba(201,146,42,0.12) 0%, rgba(92,63,158,0.05) 60%, transparent 100%);
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% -10%, rgba(61,31,112,0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 55% 45% at 15% 85%, rgba(201,146,42,0.10) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 45% at 85% 75%, rgba(20,85,164,0.12) 0%, transparent 60%);
     pointer-events: none;
+    z-index: 0;
   }
 
   /* ── TIMELINE CONNECTING LINE ── */
@@ -595,10 +857,6 @@
   .why-item { transition: transform 0.2s, box-shadow 0.2s; }
   .why-item:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,110,64,0.12); }
 
-  /* ── DAY HEADER DEPTH ── */
-  .day-header h2 { text-shadow: 0 2px 20px rgba(0,0,0,0.22); }
-  .day-header { box-shadow: 0 8px 32px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.08); }
-
   /* ── MONDAY THEME ── */
   .monday   .events::before { background: linear-gradient(to bottom, transparent 0%, rgba(26,110,64,0.22) 10%, rgba(26,110,64,0.22) 90%, transparent 100%); }
   .monday   .event-card:not(.highlight):hover { box-shadow: -3px 0 0 var(--green), 4px 0 20px rgba(26,110,64,0.07); }
@@ -621,24 +879,56 @@
      HERO
 ══════════════════════════════════════════════════════════ -->
 <section class="hero">
-  <span class="hero-flag">🇧🇦</span>
-  <p class="hero-eyebrow">Group Family Trip · 3 Days · 2 Vans</p>
-  <h1 class="hero-title">Bosnia &amp;<br/><span>Herzegovina</span></h1>
-  <p class="hero-sub">Friday → Monday &nbsp;·&nbsp; Tuzla · Sarajevo · Jablanica · Mostar</p>
+  <div class="hero-card">
+    <div class="hero-header">
+      <span class="hero-flag">🇧🇦</span>
+      <h1 class="hero-title">Bosnia &amp;<br/><span>Herzegovina</span></h1>
+    </div>
+    <p class="hero-sub">Friday <span class="arrow">→</span> <strong>Monday</strong> &nbsp;·&nbsp; 4 stops</p>
 
-  <div class="route">
-    <div class="route-pill">✈ Tuzla <span class="arrow">arrival</span></div>
-    <div class="route-pill">→</div>
-    <div class="route-pill">🏙 Sarajevo <span class="arrow">hub</span></div>
-    <div class="route-pill">→</div>
-    <div class="route-pill">🏞 Jablanica <span class="arrow">scenic stop</span></div>
-    <div class="route-pill">→</div>
-    <div class="route-pill">🌉 Mostar <span class="arrow">highlight</span></div>
-  </div>
+    <div class="route">
+      <a href="#friday" class="route-pill">
+        <span class="route-icon"><span class="material-symbols-outlined">flight_land</span></span>
+        <span class="route-body">
+          <span class="route-name">Tuzla</span>
+          <span class="route-meta">Arrival city · Friday</span>
+        </span>
+        <span class="route-badge">arrival</span>
+      </a>
 
-  <div class="hero-scroll">
-    <div class="scroll-dot"></div>
-    scroll
+      <div class="route-arrow"><span class="material-symbols-outlined">arrow_downward</span></div>
+
+      <a href="#saturday" class="route-pill is-hub">
+        <span class="route-icon"><span class="material-symbols-outlined">mosque</span></span>
+        <span class="route-body">
+          <span class="route-name">Sarajevo</span>
+          <span class="route-meta">Main hub · Sat – Sun</span>
+        </span>
+        <span class="route-badge">hub</span>
+      </a>
+
+      <div class="route-arrow"><span class="material-symbols-outlined">arrow_downward</span></div>
+
+      <a href="#sunday" class="route-pill">
+        <span class="route-icon"><span class="material-symbols-outlined">landscape</span></span>
+        <span class="route-body">
+          <span class="route-name">Jablanica</span>
+          <span class="route-meta">Scenic stop · Sunday</span>
+        </span>
+        <span class="route-badge">scenic</span>
+      </a>
+
+      <div class="route-arrow"><span class="material-symbols-outlined">arrow_downward</span></div>
+
+      <a href="#sunday" class="route-pill is-highlight">
+        <span class="route-icon"><span class="material-symbols-outlined">star</span></span>
+        <span class="route-body">
+          <span class="route-name">Mostar</span>
+          <span class="route-meta">Trip highlight · Monday</span>
+        </span>
+        <span class="route-badge">highlight</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -646,11 +936,14 @@
      STICKY NAV
 ══════════════════════════════════════════════════════════ -->
 <nav class="day-nav">
-  <a href="#friday"   class="day-tab friday">   🟣 <span class="label">Friday</span></a>
-  <a href="#saturday" class="day-tab saturday">  🟡 <span class="label">Saturday</span></a>
-  <a href="#sunday"   class="day-tab sunday">    🔵 <span class="label">Sunday</span></a>
-  <a href="#monday"   class="day-tab monday">    🟢 <span class="label">Monday</span></a>
-  <a href="#summary"  class="day-tab">           📋 <span class="label">Summary</span></a>
+  <div class="day-nav-inner">
+    <a href="#friday"   class="day-tab friday"><span class="day-short">FRI</span> <span class="label">Friday</span></a>
+    <a href="#saturday" class="day-tab saturday"><span class="day-short">SAT</span> <span class="label">Saturday</span></a>
+    <a href="#sunday"   class="day-tab sunday"><span class="day-short">SUN</span> <span class="label">Sunday</span></a>
+    <a href="#monday"   class="day-tab monday"><span class="day-short">MON</span> <span class="label">Monday</span></a>
+    <a href="#summary"  class="day-tab"><span class="day-short">ALL</span> <span class="label">Summary</span></a>
+    <button class="filter-toggle" id="filterToggle" aria-pressed="false"><span class="filter-icon">⭐</span> <span class="filter-text">Must-See Only</span></button>
+  </div>
 </nav>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -659,8 +952,41 @@
 <main>
 <div class="container">
 
+  <section class="stay-section reveal">
+    <div class="day-header friday no-accordion" style="padding: 20px 24px; margin-bottom: 24px;">
+      <p class="day-num">Trip details</p>
+      <h2 style="font-size: 26px; color: #000;">Flights & accommodations</h2>
+      <p class="day-desc" style="color: #000;">Maastricht flights plus stays in Sarajevo with map links.</p>
+    </div>
+    <div class="stay-grid">
+      <div class="stay-card reveal">
+        <p class="s-label">✈ Flight from Maastricht</p>
+        <ul class="s-items">
+          <li>Friday, June 12, 2026 — Departure: 8:20 PM</li>
+          <li>Monday, June 15, 2026 — Return flight: 12:00 PM</li>
+        </ul>
+      </div>
+      <div class="stay-card reveal">
+        <p class="s-label">🏡 Apartment Paradise Enver</p>
+        <ul class="s-items">
+          <li>Check-in: Friday night, June 12, 2026</li>
+          <li>Check-out: Saturday, June 13, 2026</li>
+          <li><a href="https://maps.google.com/maps?q=R469%2C+75273+Dubrave+Gornje%2C+Bosnia+%26+Herzegovina" target="_blank">📍 Google Maps</a></li>
+        </ul>
+      </div>
+      <div class="stay-card reveal">
+        <p class="s-label">🏡 Villa Mercurii</p>
+        <ul class="s-items">
+          <li>Check-in: Saturday, June 13, 2026</li>
+          <li>Check-out: Monday, June 15, 2026 (before 10:30 AM)</li>
+          <li><a href="https://maps.google.com/maps?q=Sovrle+215I%2C+71000+Sarajevo%2C+Bosnia+%26+Herzegovina" target="_blank">📍 Google Maps</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- ── FRIDAY ── -->
-  <section id="friday" class="day-section friday">
+  <section id="friday" class="day-section friday expanded">
     <div class="day-header friday reveal" data-emoji="🟣">
       <p class="day-num">Day 1 · Friday</p>
       <h2>Arrival in Tuzla</h2>
@@ -705,11 +1031,11 @@
   </section>
 
   <!-- ── SATURDAY ── -->
-  <section id="saturday" class="day-section saturday">
+  <section id="saturday" class="day-section saturday collapsed">
     <div class="day-header saturday reveal" data-emoji="🟡">
       <p class="day-num">Day 2 · Saturday</p>
       <h2>Tuzla → Sarajevo</h2>
-      <p class="day-desc">Scenic drive · Old Town evening walk · Group dinner · Hotel check-in</p>
+      <p class="day-desc">Scenic drive · Detailed Old Town exploration (16:30–19:30) · Group dinner · Hotel check-in</p>
     </div>
     <div class="events">
 
@@ -718,7 +1044,7 @@
         <div class="event-content">
           <div class="event-icon-title"><span class="event-icon">🚐</span><span class="event-title">Pick Up Both Vans</span></div>
           <ul class="event-bullets">
-            <li>Collect 9-seater + 7-seater from rental</li>
+            <li>Collect 2 8-seater van from rental</li>
             <li>Complete van checks &amp; fuel up</li>
           </ul>
         </div>
@@ -752,22 +1078,110 @@
         <div class="event-content">
           <div class="event-icon-title"><span class="event-icon">🥙</span><span class="event-title">Arrive in Sarajevo &amp; Lunch</span></div>
           <ul class="event-bullets">
-            <li>Drop bags at hotel (no check-in yet)</li>
             <li>Lunch nearby the hotel</li>
-            <li>Free time to freshen up &amp; explore nearby</li>
+            <li>Explore nearby</li>
           </ul>
         </div>
       </div>
 
-      <div class="event-card highlight reveal">
-        <div class="event-time">16:30–19:30</div>
+      <div class="event-card highlight reveal priority-5">
+        <div class="event-time">16:30–16:45</div>
         <div class="event-content">
-          <div class="event-icon-title"><span class="event-icon">🌆</span><span class="event-title">Sarajevo Old Town Evening Walk</span></div>
+          <div class="event-icon-title"><span class="event-icon">💧</span><span class="event-title">Sebilj Fountain</span></div>
           <ul class="event-bullets">
-            <li>Baščaršija old bazaar district</li>
-            <li>Traditional coffee shops &amp; Bosnian sweets</li>
-            <li>Local market streets &amp; souvenirs</li>
-            <li>Relaxed group stroll &amp; photos</li>
+            <li><strong>⭐⭐⭐⭐⭐</strong> Historic Ottoman fountain in Baščaršija</li>
+            <li><strong>Duration:</strong> 15 min</li>
+            <li><a href="https://maps.google.com/maps?q=Sebilj+Fountain+Sarajevo" target="_blank" style="color: var(--gold); text-decoration: none;">📍 Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="event-card highlight reveal priority-5">
+        <div class="event-time">16:45–17:30</div>
+        <div class="event-content">
+          <div class="event-icon-title"><span class="event-icon">🏪</span><span class="event-title">Baščaršija &amp; Kazandžiluk Street</span></div>
+          <ul class="event-bullets">
+            <li><strong>⭐⭐⭐⭐⭐</strong> Ancient bazaar with shops &amp; crafts</li>
+            <li><strong>Duration:</strong> 45 min</li>
+            <li><a href="https://maps.google.com/maps?q=Bascarija+Sarajevo" target="_blank" style="color: var(--gold); text-decoration: none;">📍 Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="walk-time-card">Walking distance: ~5 min</div>
+      <div class="event-card reveal priority-4">
+        <div class="event-time">17:30–17:50</div>
+        <div class="event-content">
+          <div class="event-icon-title"><span class="event-icon">🕌</span><span class="event-title">Gazi Husrev-beg Mosque</span></div>
+          <ul class="event-bullets">
+            <li><strong>⭐⭐⭐⭐</strong> Grand Ottoman mosque with stunning architecture</li>
+            <li><strong>Duration:</strong> 20 min</li>
+            <li><a href="https://maps.google.com/maps?q=Gazi+Husrev-beg+Mosque+Sarajevo" target="_blank" style="color: var(--gold); text-decoration: none;">📍 Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="walk-time-card">Walking distance: ~10 min</div>
+      <div class="event-card highlight reveal priority-5">
+        <div class="event-time">17:50–18:20</div>
+        <div class="event-content">
+          <div class="event-icon-title"><span class="event-icon">☕</span><span class="event-title">Traditional Bosnian Coffee &amp; Desserts</span></div>
+          <ul class="event-bullets">
+            <li><strong>⭐⭐⭐⭐⭐</strong> Local café with authentic flavors</li>
+            <li><strong>Duration:</strong> 30 min</li>
+            <li><a href="https://maps.google.com/maps?q=Sarajevo+traditional+coffee+Bascarija" target="_blank" style="color: var(--gold); text-decoration: none;">📍 Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="walk-time-card">Walking distance: ~8 min</div>
+      <div class="event-card reveal priority-4">
+        <div class="event-time">18:20–18:35</div>
+        <div class="event-content">
+          <div class="event-icon-title"><span class="event-icon">🤝</span><span class="event-title">Sarajevo Meeting of Cultures</span></div>
+          <ul class="event-bullets">
+            <li><strong>⭐⭐⭐⭐</strong> Symbolic landmark of multicultural heritage</li>
+            <li><strong>Duration:</strong> 15 min</li>
+            <li><a href="https://maps.google.com/maps?q=Sarajevo+Meeting+of+Cultures" target="_blank" style="color: var(--gold); text-decoration: none;">📍 Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="walk-time-card">Walking distance: ~6 min</div>
+      <div class="event-card reveal priority-4">
+        <div class="event-time">18:35–18:50</div>
+        <div class="event-content">
+          <div class="event-icon-title"><span class="event-icon">🌉</span><span class="event-title">Latin Bridge</span></div>
+          <ul class="event-bullets">
+            <li><strong>⭐⭐⭐⭐</strong> Historic bridge with panoramic river views</li>
+            <li><strong>Duration:</strong> 15 min</li>
+            <li><a href="https://maps.google.com/maps?q=Latin+Bridge+Sarajevo" target="_blank" style="color: var(--gold); text-decoration: none;">📍 Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="walk-time-card">Walking distance: ~7 min</div>
+      <div class="event-card reveal priority-4">
+        <div class="event-time">18:50–19:15</div>
+        <div class="event-content">
+          <div class="event-icon-title"><span class="event-icon">🏛️</span><span class="event-title">Sarajevo City Hall</span></div>
+          <ul class="event-bullets">
+            <li><strong>⭐⭐⭐⭐</strong> Stunning Austro-Hungarian architecture</li>
+            <li><strong>Duration:</strong> 25 min</li>
+            <li><a href="https://maps.google.com/maps?q=Sarajevo+City+Hall" target="_blank" style="color: var(--gold); text-decoration: none;">📍 Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="walk-time-card">Walking distance: ~5 min</div>
+      <div class="event-card reveal priority-3">
+        <div class="event-time">19:15–19:30</div>
+        <div class="event-content">
+          <div class="event-icon-title"><span class="event-icon">🚶</span><span class="event-title">Riverside Walk &amp; Family Photos</span></div>
+          <ul class="event-bullets">
+            <li><strong>⭐⭐⭐</strong> Scenic riverside stroll with photo opportunities</li>
+            <li><strong>Duration:</strong> 15 min</li>
+            <li><a href="https://maps.google.com/maps?q=Sarajevo+Riverside" target="_blank" style="color: var(--gold); text-decoration: none;">📍 Google Maps</a></li>
           </ul>
         </div>
       </div>
@@ -799,11 +1213,11 @@
   </section>
 
   <!-- ── SUNDAY ── -->
-  <section id="sunday" class="day-section sunday">
+  <section id="sunday" class="day-section sunday collapsed">
     <div class="day-header sunday reveal" data-emoji="🔵">
       <p class="day-num">Day 3 · Sunday</p>
       <h2>Jablanica + Mostar Day Trip</h2>
-      <p class="day-desc">Main highlight · Authentic Bosnian lunch · Old Bridge</p>
+      <p class="day-desc">Main highlight · Authentic Bosnian lunch · Detailed Mostar exploration (13:30–16:30)</p>
     </div>
     <div class="events">
 
@@ -868,16 +1282,78 @@
         </div>
       </div>
 
-      <div class="event-card highlight reveal">
-        <div class="event-time">13:30–16:30</div>
+      <div class="event-card highlight reveal priority-5">
+        <div class="event-time">13:30–13:45</div>
         <div class="event-content">
-          <div class="event-icon-title"><span class="event-icon">🌉</span><span class="event-title">Explore Mostar</span></div>
+          <div class="event-icon-title"><span class="event-icon">🌉</span><span class="event-title">Arrival &amp; First View of Stari Most</span></div>
           <ul class="event-bullets">
-            <li>Stari Most (Old Bridge) — UNESCO World Heritage landmark</li>
-            <li>Old Bazaar — handmade crafts &amp; copperwork</li>
-            <li>Riverside cafés with bridge views</li>
-            <li>Scenic viewpoints &amp; photography</li>
-            <li>Relaxed family walking at own pace</li>
+            <li><strong>⭐⭐⭐⭐⭐</strong> Iconic first glimpse of the UNESCO bridge</li>
+            <li><strong>Duration:</strong> 15 min</li>
+            <li><a href="https://maps.google.com/maps?q=Stari+Most+Mostar" target="_blank" style="color: var(--gold); text-decoration: none;">📍 Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="event-card highlight reveal priority-5">
+        <div class="event-time">13:45–14:20</div>
+        <div class="event-content">
+          <div class="event-icon-title"><span class="event-icon">🚶</span><span class="event-title">Walk Across Bridge &amp; Riverbank Views</span></div>
+          <ul class="event-bullets">
+            <li><strong>⭐⭐⭐⭐⭐</strong> Cross Stari Most + stunning Neretva River views</li>
+            <li><strong>Duration:</strong> 35 min</li>
+            <li><a href="https://maps.google.com/maps?q=Stari+Most+Mostar+bridge" target="_blank" style="color: var(--gold); text-decoration: none;">📍 Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="walk-time-card">Walking distance: ~8 min</div>
+      <div class="event-card reveal priority-4">
+        <div class="event-time">14:20–14:50</div>
+        <div class="event-content">
+          <div class="event-icon-title"><span class="event-icon">🏪</span><span class="event-title">Kujundžiluk Bazaar</span></div>
+          <ul class="event-bullets">
+            <li><strong>⭐⭐⭐⭐</strong> Historic old bazaar with handmade crafts &amp; copperwork</li>
+            <li><strong>Duration:</strong> 30 min</li>
+            <li><a href="https://maps.google.com/maps?q=Kujundziluk+Bazaar+Mostar" target="_blank" style="color: var(--gold); text-decoration: none;">📍 Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="walk-time-card">Short walk along riverbank</div>
+      <div class="event-card highlight reveal priority-4">
+        <div class="event-time">14:50–15:20</div>
+        <div class="event-content">
+          <div class="event-icon-title"><span class="event-icon">☕</span><span class="event-title">Riverside Café Break with Bridge View</span></div>
+          <ul class="event-bullets">
+            <li><strong>⭐⭐⭐⭐</strong> Relax at café overlooking Stari Most &amp; Neretva River</li>
+            <li><strong>Duration:</strong> 30 min</li>
+            <li><a href="https://maps.google.com/maps?q=Mostar+riverside+cafe" target="_blank" style="color: var(--gold); text-decoration: none;">📍 Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="walk-time-card">~5 min to scenic viewpoints</div>
+      <div class="event-card reveal priority-4">
+        <div class="event-time">15:20–15:50</div>
+        <div class="event-content">
+          <div class="event-icon-title"><span class="event-icon">📸</span><span class="event-title">Scenic Viewpoints &amp; Best Photo Spots</span></div>
+          <ul class="event-bullets">
+            <li><strong>⭐⭐⭐⭐</strong> Premium photo angles overlooking the Old Bridge</li>
+            <li><strong>Duration:</strong> 30 min</li>
+            <li><a href="https://maps.google.com/maps?q=Mostar+viewpoint" target="_blank" style="color: var(--gold); text-decoration: none;">📍 Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="walk-time-card">Flexible free-roaming in old town</div>
+      <div class="event-card reveal priority-3">
+        <div class="event-time">15:50–16:30</div>
+        <div class="event-content">
+          <div class="event-icon-title"><span class="event-icon">🍦</span><span class="event-title">Relaxed Family Walk &amp; Free Time</span></div>
+          <ul class="event-bullets">
+            <li><strong>⭐⭐⭐</strong> Souvenirs, ice cream, explore at own pace</li>
+            <li><strong>Duration:</strong> 40 min</li>
+            <li><a href="https://maps.google.com/maps?q=Mostar+old+town" target="_blank" style="color: var(--gold); text-decoration: none;">📍 Google Maps</a></li>
           </ul>
         </div>
       </div>
@@ -910,8 +1386,8 @@
         <div class="event-content">
           <div class="event-icon-title"><span class="event-icon">🏁</span><span class="event-title">Back in Sarajevo</span></div>
           <ul class="event-bullets">
+            <li>Dinner or takeaway</li>
             <li>Hotel arrival &amp; unwind</li>
-            <li>Light dinner or takeaway</li>
             <li>Rest &amp; pack for departure</li>
           </ul>
         </div>
@@ -921,7 +1397,7 @@
   </section>
 
   <!-- ── MONDAY ── -->
-  <section id="monday" class="day-section monday">
+  <section id="monday" class="day-section monday collapsed">
     <div class="day-header monday reveal" data-emoji="🟢">
       <p class="day-num">Day 4 · Monday</p>
       <h2>Return Journey</h2>
@@ -1015,18 +1491,20 @@
       </div>
     </div>
 
-    <div class="why-grid reveal">
+    <!-- <div class="why-grid reveal">
       <div class="why-item"><span class="check">✅</span> Jablanica stop has a real purpose — views + coffee break</div>
       <div class="why-item"><span class="check">✅</span> Authentic Bosnian food at a famous local restaurant</div>
       <div class="why-item"><span class="check">✅</span> Long drives broken naturally for kids &amp; families</div>
       <div class="why-item"><span class="check">✅</span> Mostar still gets 3 full hours of exploration</div>
       <div class="why-item"><span class="check">✅</span> Flexible roaming in smaller groups — no rushing</div>
       <div class="why-item"><span class="check">✅</span> Convoy driving keeps the whole group together</div>
-    </div>
+    </div> -->
   </section>
 
 </div><!-- /container -->
 </main>
+
+<button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"><span class="material-symbols-outlined">arrow_warm_up</span></button>
 
 <footer>
   <span class="f-flag">🇧🇦</span>
@@ -1064,6 +1542,70 @@
     });
   }, { rootMargin: '-40% 0px -55% 0px' });
   sections.forEach(s => scrollSpy.observe(s));
+
+  // Accordion toggle for day sections (skip headers marked `no-accordion`)
+  document.querySelectorAll('.day-section .day-header').forEach(header => {
+    if (header.classList.contains('no-accordion')) return;
+    const section = header.closest('.day-section');
+    header.setAttribute('tabindex', '0');
+    header.setAttribute('role', 'button');
+    header.setAttribute('aria-expanded', section.classList.contains('expanded') ? 'true' : 'false');
+
+    const toggleSection = () => {
+      const isExpanded = section.classList.toggle('expanded');
+      section.classList.toggle('collapsed', !isExpanded);
+      header.setAttribute('aria-expanded', String(isExpanded));
+    };
+
+    header.addEventListener('click', toggleSection);
+    header.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleSection();
+      }
+    });
+  });
+
+  // Filter toggle for must-see items only
+  const filterToggle = document.getElementById('filterToggle');
+  if (filterToggle) {
+    const filterText = filterToggle.querySelector('.filter-text');
+    const filterIcon = filterToggle.querySelector('.filter-icon');
+
+    const updateFilterText = (active) => {
+      filterToggle.setAttribute('aria-pressed', String(active));
+      if (active) {
+        filterText.textContent = 'Must-See Only — ON';
+        filterIcon.textContent = '✅';
+      } else {
+        filterText.textContent = 'Must-See Only';
+        filterIcon.textContent = '⭐';
+      }
+    };
+
+    filterToggle.addEventListener('click', () => {
+      const isActive = document.body.classList.toggle('filter-must-see');
+      filterToggle.classList.toggle('active', isActive);
+      updateFilterText(isActive);
+    });
+  }
+
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  if (scrollTopBtn) {
+    const toggleScrollBtn = () => {
+      if (window.scrollY > window.innerHeight / 2) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    };
+
+    window.addEventListener('scroll', toggleScrollBtn, { passive: true });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    toggleScrollBtn();
+  }
 </script>
 
 </body>
